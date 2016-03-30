@@ -82,7 +82,64 @@ class LinkedListTest < Minitest::Test
     assert_equal "doop deep", list.to_string
   end
 
-  # def test_prepend_exists
+  def test_append_returns_plop_suu
+    list = LinkedList.new
+    list.append ("plop")
+    list.append ("suu")
+    assert_equal "plop suu", list.to_string
+  end
+
+  def test_prepend_returns_dop
+    list = LinkedList.new
+    list.append ("plop")
+    list.append ("suu")
+    list.prepend ("dop")
+    assert_equal "dop plop suu", list.to_string
+  end
+
+  def test_count_returns_3
+    list = LinkedList.new
+    list.append ("plop")
+    list.append ("suu")
+    list.prepend ("dop")
+    assert_equal 3, list.count
+  end
+
+  def test_insert_woo_to_position_one
+    list = LinkedList.new
+    list.append ("plop")
+    list.append ("suu")
+    list.prepend ("dop")
+    list.insert(1,"woo")
+    assert true
+  end
+
+  def test_insert
+    list = LinkedList.new
+    list.append ("plop")
+    list.append ("suu")
+    list.prepend ("dop")
+    list.insert(2,"woo")
+    assert_equal "dop plop woo suu", list.to_string
+    assert_equal "woo", list.head.next_node.next_node.data
+  end
+
+  def test_it_can_find_tail
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("plop")
+    assert_equal "plop", list.find_tail.data
+  end
+
+  def test_check_that_find_is_working
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    list.append("plop")
+    assert_equal "plop", list.find(2,1)
+  end
+
 
 
 end

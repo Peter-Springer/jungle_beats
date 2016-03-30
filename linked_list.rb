@@ -7,7 +7,7 @@ class LinkedList
   attr_reader :head, :string
 
   def initialize
-    @string = []
+  @string = []
   end
 
   def append(data)
@@ -50,10 +50,43 @@ end
     @string.join(" ")
   end
 
-  def prepend
-  end
+  def prepend(new_node)
+    @string.unshift(new_node)
+    head = Node.new(new_node)
+    head.next_node = @head
+    @head = head
+end
 
-  def insert
+  def insert(position, data)
+    # @string.insert(position, data)
+    if @head.nil?
+      @head = Node.new(data)
+    elsif position == 0
+      prepend(data)
+    else
+    counter = 0
+    current_head = @head
+    new_node = Node.new(data)
+    until counter == position -1
+      counter += 1
+      current_head = current_head.next_node
+    end
+    node = current_head.next_node
+    current_head.next_node = new_node
+    current_head.next_node.next_node = node
+    @string.insert(position, data)
   end
+end
+
+def find_tail
+  current_node = @head
+  until current_node.next_node.nil?
+    current_node = current_node.next_node
+  end
+  current_node
+end
+
+def find(position, element_count)
+end
 
 end
