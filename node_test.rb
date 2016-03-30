@@ -19,4 +19,9 @@ class NodeTest < Minitest::Test
     assert_equal nil, node.next_node
   end
 
+  def test_data_returns_nil_by_default
+    node = Node.new
+    assert_equal nil, node.data
+  end
+
 end
