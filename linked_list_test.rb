@@ -136,9 +136,38 @@ class LinkedListTest < Minitest::Test
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
-    list.append("plop")
-    assert_equal "plop", list.find(2,1)
+    list.append("shi")
+    list.append("shu")
+    assert_equal "shi", list.find(2,1)
+    assert_equal "deep shi shu", list.find(1,3)
   end
+
+def test_includes?
+  list = LinkedList.new
+  list.append ("doop")
+  list.append("deep")
+  assert list.includes?("doop")
+  refute list.includes?("dep")
+end
+
+def test_pop_off_the_last_node
+  list = LinkedList.new
+  list.append("doop")
+  list.append("deep")
+  list.append("shi")
+  list.append("shu")
+  assert_equal "shu", list.pop
+end
+
+def test_to_string
+  list = LinkedList.new
+  list.append("deep")
+  list.append("woo")
+  list.append("shi")
+  assert_equal "deep woo shi", list.to_string
+end
+
+
 
 
 
