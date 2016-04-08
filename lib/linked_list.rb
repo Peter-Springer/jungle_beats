@@ -1,4 +1,4 @@
-  require "./node.rb"
+  require "./lib/node.rb"
   require "pry"
 
   class LinkedList
@@ -45,9 +45,9 @@
 
     def prepend(new_node)
         @string.unshift(new_node)
-          head = Node.new(new_node)
-            head.next_node = @head
-              @head = head
+        head = Node.new(new_node)
+        head.next_node = @head
+        @head = head
     end
 
     def insert(position, data)

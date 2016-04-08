@@ -1,4 +1,4 @@
-  require "./linked_list.rb"
+  require "./lib/linked_list.rb"
   class JungleBeats
 
   def initialize
@@ -23,6 +23,6 @@
 
   def play
       beats = @list.to_string
-        `say -r 500 -v Boing #{beats}`
+        `say -r 150 -v Ralph #{beats}`
       end
   end

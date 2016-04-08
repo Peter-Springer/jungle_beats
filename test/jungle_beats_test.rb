@@ -1,8 +1,8 @@
   require "minitest/autorun"
   require "minitest/pride"
-  require "./jungle_beats"
-  require "./linked_list.rb"
-  require "./node.rb"
+  require "./lib/jungle_beats"
+  require "./lib/linked_list.rb"
+  require "./lib/node.rb"
 
   class JungleBeatsTest < Minitest::Test
 
@@ -33,7 +33,7 @@
 
   def test_jungle_beat_play
     jb = JungleBeats.new
-    beats = "ding dah oom oom ding oom oom oom ding dah oom oom ding dah oom oom ding dah oom oom "
+    beats = "do doop do bla do be"
     jb.append(beats)
     jb.play
   end
