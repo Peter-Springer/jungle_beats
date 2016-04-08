@@ -1,5 +1,5 @@
-  require "./lib/linked_list.rb"
-  class JungleBeats
+require "./lib/linked_list.rb"
+class JungleBeats
 
   def initialize
     @list = LinkedList.new
@@ -11,9 +11,9 @@
 
   def append(data)
     beats = data.split(" ")
-      beats.each do |beat|
-        @list.append(beat)
-      end
+    beats.each do |beat|
+      @list.append(beat)
+    end
     data
   end
 
@@ -22,7 +22,7 @@
   end
 
   def play
-      beats = @list.to_string
-        `say -r 150 -v Ralph #{beats}`
-      end
+    beats = @list.to_string
+    `say -r 150 -v Ralph #{beats}`
   end
+end

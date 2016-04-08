@@ -3,7 +3,7 @@ require "minitest/pride"
 require "./lib/node.rb"
 
 class NodeTest < Minitest::Test
-
+  
   def test_node_exists
     node = Node.new
     assert_equal Node, node.class

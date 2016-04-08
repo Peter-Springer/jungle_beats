@@ -1,10 +1,10 @@
-  require "minitest/autorun"
-  require "minitest/pride"
-  require "./lib/jungle_beats"
-  require "./lib/linked_list.rb"
-  require "./lib/node.rb"
+require "minitest/autorun"
+require "minitest/pride"
+require "./lib/jungle_beats"
+require "./lib/linked_list.rb"
+require "./lib/node.rb"
 
-  class JungleBeatsTest < Minitest::Test
+class JungleBeatsTest < Minitest::Test
 
   def test_jungle_beats_exists
     jb = JungleBeats.new
